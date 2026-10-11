@@ -35,10 +35,47 @@ La version de démonstration s'ouvre avec le code **010101**.
 | Le code secret | `script.js` | `const bonCode = "010101";` tout en haut. Six chiffres. |
 | La date affichée | `index.html` | `<p class="date">01/01/01</p>` |
 | La lettre | `index.html` | La boîte `papier` : le titre est dans `titre-lettre`, chaque `<p>` est un paragraphe, la fin est dans `signature`. Ajouter autant de `<p>` que nécessaire, le papier s'allonge tout seul. |
-| La photo du Polaroïd | `design.css` | Dans `.photo`, remplacer les trois lignes `radial-gradient` par `background-image: url("maphoto.jpg");` |
-| Les trois photos de la bande | `index.html` | Sur chaque `<div class="cliche">`, ajouter `style="background-image: url('photo1.jpg');"` |
+| Les photos | `design.css` et `index.html` | Voir la section « Ajouter ses photos » juste en dessous. |
 
-Les photos se mettent dans le même dossier que `index.html`. Elles sont recadrées automatiquement pour remplir leur cadre.
+### Ajouter ses photos
+
+Le site a quatre emplacements de photo. Tant qu'ils sont vides, ils affichent un fond sombre avec une lueur de bougie.
+
+| Emplacement | Écran | Format conseillé |
+| --- | --- | --- |
+| Le Polaroïd | Code secret | Portrait (4 par 5) |
+| Les trois clichés de la bande | Lettre | Portrait (3 par 4) |
+
+**Étape 1.** Copier les photos dans le dossier du site, à côté de `index.html`. Leur donner des noms simples, sans espace ni accent : `polaroid.jpg`, `photo1.jpg`, `photo2.jpg`, `photo3.jpg`.
+
+**Étape 2, le Polaroïd.** Dans `design.css`, bloc `.photo`, remplacer les trois lignes `radial-gradient` par une seule :
+
+```css
+.photo {
+    aspect-ratio: 4 / 5;
+    background-color: #1a0f0c;
+    background-image: url("polaroid.jpg");
+    background-size: cover;
+    background-position: center;
+}
+```
+
+**Étape 3, la bande de trois photos.** Dans `index.html`, boîte `photobooth`, ajouter un `style` à chaque cliché :
+
+```html
+<div class="photobooth">
+    <div class="cliche" style="background-image: url('photo1.jpg');"></div>
+    <div class="cliche" style="background-image: url('photo2.jpg');"></div>
+    <div class="cliche" style="background-image: url('photo3.jpg');"></div>
+</div>
+```
+
+À savoir :
+
+- Les photos sont recadrées automatiquement pour remplir leur cadre, sans être déformées (`background-size: cover`). Si le recadrage coupe un visage, changer `background-position: center;` en `top` ou `bottom`.
+- Le nom écrit dans le code doit être exactement celui du fichier, majuscules et extension comprises (`.jpg`, `.jpeg` et `.png` sont trois noms différents).
+- Pour ajouter un quatrième cliché, copier une ligne `<div class="cliche" ...>` : la bande s'allonge toute seule.
+- Des photos de téléphone pèsent plusieurs mégaoctets et ralentissent le chargement. Les réduire à environ 1000 pixels de large avant de les ajouter.
 
 ### Les textes
 
