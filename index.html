@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadeau</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Parisienne&display=swap">
+</head>
+<body>
+    <canvas class="feux"></canvas>
+    <div class = "ecran">
+        <div class = "polaroid">
+            <svg class="noeud" viewBox="0 0 100 80">
+                <path fill="#b3243f" d="M50 36C30 8 6 6 6 26s22 26 44 12Zm0 0c20-28 44-30 44-10S72 52 50 38Z"/>
+                <path fill="#8a1a31" d="M44 42 28 76l12-6 6 8 8-34Zm12 0 14 34-12-6-6 8-4-34Z"/>
+                <ellipse cx="50" cy="38" rx="9" ry="10" fill="#c93655"/>
+            </svg>
+            <div class="photo"></div>
+        </div>
+        <div class = "clavier">
+            <svg class="cadenas" viewBox="0 0 30 36">
+                <path d="M8 15V10a7 7 0 0 1 14 0v5" fill="none" stroke="#d6a94a" stroke-width="3"/>
+                <rect x="3" y="14" width="24" height="20" rx="4" fill="#d6a94a"/>
+                <path transform="translate(10 19) scale(0.41)" fill="#7c1226" d="M12 21C4 15 0 11 0 6.5A6.3 6.3 0 0 1 12 4a6.3 6.3 0 0 1 12 2.5C24 11 20 15 12 21Z"/>
+            </svg>
+            <h1>Entre le code</h1>
+            <div class = "cases">
+                <span class = "case"></span>
+                <span class = "case"></span>
+                <span class = "case"></span>
+                <span class = "case"></span>
+                <span class = "case"></span>
+                <span class = "case"></span>
+            </div>
+            <div class = "touche">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <span class="petit-coeur">♥</span>
+                <button class="zero">0</button>
+                <button class="efface">⌫</button>
+            </div>
+        </div>
+    </div>
+    <div class="ecran-date cache">
+        <p class="date">01/01/01</p>
+    </div>
+
+    <div class="ecran-chargement cache">
+        <div class="pluie"></div>
+        <p class="coucou">Hi my love !</p>
+        <svg class="gateau" viewBox="0 0 220 190">
+            <ellipse cx="110" cy="180" rx="102" ry="8" fill="#8fa867"/>
+            <rect x="20" y="112" width="180" height="68" rx="10" fill="#cfe3a8"/>
+            <rect x="40" y="70" width="140" height="52" rx="8" fill="#dcebbd"/>
+            <path fill="#a8c47a" d="M40 84v-6q0-8 8-8h124q8 0 8 8v6q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0z"/>
+            <ellipse cx="62" cy="76" rx="5" ry="3" fill="#6f8f45" transform="rotate(-20 62 76)"/>
+            <ellipse cx="90" cy="74" rx="5" ry="3" fill="#7a5a3a" transform="rotate(15 90 74)"/>
+            <ellipse cx="118" cy="77" rx="5" ry="3" fill="#6f8f45" transform="rotate(-35 118 77)"/>
+            <ellipse cx="146" cy="74" rx="5" ry="3" fill="#7a5a3a" transform="rotate(25 146 74)"/>
+            <ellipse cx="166" cy="78" rx="4" ry="3" fill="#6f8f45" transform="rotate(-10 166 78)"/>
+            <circle cx="70" cy="156" r="7" fill="#f0a9a4"/>
+            <circle cx="150" cy="156" r="7" fill="#f0a9a4"/>
+            <path fill="none" stroke="#3b0f18" stroke-width="3" stroke-linecap="round" d="M80 148q8-10 16 0M124 148q8-10 16 0M103 156q7 7 14 0"/>
+            <rect x="82" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+            <rect x="106" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+            <rect x="130" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+            <ellipse class="flamme" cx="86" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+            <ellipse class="flamme" cx="110" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+            <ellipse class="flamme" cx="134" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+        </svg>
+        <p class="texte-chargement">Ça arrive…</p>
+        <div class="barre">
+            <div class="remplissage"></div>
+        </div>
+    </div>
+
+    <div class="ecran-gateau cache">
+        <p class="voeu">Fais un vœu pour nous !</p>
+        <p class="compte"></p>
+        <div class="zone-gateau">
+            <svg class="grand-gateau" viewBox="0 0 220 190">
+                <ellipse cx="110" cy="180" rx="102" ry="8" fill="#8fa867"/>
+                <rect x="20" y="112" width="180" height="68" rx="10" fill="#cfe3a8"/>
+                <rect x="40" y="70" width="140" height="52" rx="8" fill="#dcebbd"/>
+                <path fill="#a8c47a" d="M40 84v-6q0-8 8-8h124q8 0 8 8v6q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0q-10 12-20 0z"/>
+                <ellipse cx="62" cy="76" rx="5" ry="3" fill="#6f8f45" transform="rotate(-20 62 76)"/>
+                <ellipse cx="90" cy="74" rx="5" ry="3" fill="#7a5a3a" transform="rotate(15 90 74)"/>
+                <ellipse cx="118" cy="77" rx="5" ry="3" fill="#6f8f45" transform="rotate(-35 118 77)"/>
+                <ellipse cx="146" cy="74" rx="5" ry="3" fill="#7a5a3a" transform="rotate(25 146 74)"/>
+                <ellipse cx="166" cy="78" rx="4" ry="3" fill="#6f8f45" transform="rotate(-10 166 78)"/>
+                <circle cx="70" cy="156" r="7" fill="#f0a9a4"/>
+                <circle cx="150" cy="156" r="7" fill="#f0a9a4"/>
+                <path fill="none" stroke="#3b0f18" stroke-width="3" stroke-linecap="round" d="M80 148q8-10 16 0M124 148q8-10 16 0M103 156q7 7 14 0"/>
+                <rect x="82" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+                <rect x="106" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+                <rect x="130" y="32" width="8" height="38" rx="2" fill="#f3d98f"/>
+                <ellipse class="flamme" cx="86" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+                <ellipse class="flamme" cx="110" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+                <ellipse class="flamme" cx="134" cy="18" rx="5.5" ry="10" fill="#ffb347"/>
+            </svg>
+        </div>
+        <button class="bouton-souffle">Souffle nos bougies</button>
+    </div>
+
+    <div class="ecran-enveloppe cache">
+        <div class="carte">
+            <h2 class="titre">Je t'aime</h2>
+            <div class="enveloppe">
+                <div class="couche env-fond"></div>
+                <div class="couche env-lettre">pour toi</div>
+                <div class="couche env-devant"></div>
+                <div class="couche env-rabat"></div>
+                <button class="sceau">♥</button>
+            </div>
+            <p class="indice">Touche le sceau pour ouvrir</p>
+        </div>
+    </div>
+
+    <div class="ecran-lettre cache">
+
+        <div class="feuille">
+            <div class="papier">
+                <h2 class="titre-lettre">My Love</h2>
+                <p>Écris ici le premier paragraphe de ta lettre.</p>
+                <p>Et ici le deuxième.</p>
+                <p class="signature">Je t'aime.</p>
+            </div>
+        </div>
+    
+        <div class="photobooth">
+            <div class="cliche"></div>
+            <div class="cliche"></div>
+            <div class="cliche"></div>
+            <!-- <div class="cliche" style="background-image: url('photo1.jpg');"></div> -->        
+        </div>
+    
+    </div>
+
+
+    <script src="feux.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
