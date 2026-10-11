@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadeau</title>
     <link rel="stylesheet" href="design.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Parisienne&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Parisienne&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap">
 </head>
 <body>
     <canvas class="feux"></canvas>
@@ -126,22 +126,36 @@
 
     <div class="ecran-lettre cache">
 
-        <div class="feuille">
+        <div class="coeurs-flottants">
+            <span style="--x:5%; --s:26px; --t:11s; --d:0s;">♥</span>
+            <span style="--x:11%; --s:16px; --t:14s; --d:3s;">♥</span>
+            <span style="--x:90%; --s:20px; --t:12s; --d:1.5s;">♥</span>
+            <span style="--x:95%; --s:14px; --t:15s; --d:5s;">♥</span>
+        </div>
+
+        <div class="lettre">
             <div class="papier">
-                <h2 class="titre-lettre">My Love</h2>
+                <svg class="baiser" style="--x:8%; --y:9%; --r:-20deg;" viewBox="0 0 32 20"><path fill="#c22a45" d="M1 9C7 1 12 4 16 7c4-3 9-6 15 2-6 12-24 12-30 0Z"/><path fill="none" stroke="#7c1226" stroke-width="1.2" d="M4 9c8 3 16 3 24 0"/></svg>
+                <svg class="baiser" style="--x:84%; --y:6%; --r:15deg;" viewBox="0 0 32 20"><path fill="#c22a45" d="M1 9C7 1 12 4 16 7c4-3 9-6 15 2-6 12-24 12-30 0Z"/><path fill="none" stroke="#7c1226" stroke-width="1.2" d="M4 9c8 3 16 3 24 0"/></svg>
+                <svg class="baiser" style="--x:88%; --y:78%; --r:-30deg;" viewBox="0 0 32 20"><path fill="#c22a45" d="M1 9C7 1 12 4 16 7c4-3 9-6 15 2-6 12-24 12-30 0Z"/><path fill="none" stroke="#7c1226" stroke-width="1.2" d="M4 9c8 3 16 3 24 0"/></svg>
+                <svg class="baiser" style="--x:6%; --y:88%; --r:25deg;" viewBox="0 0 32 20"><path fill="#c22a45" d="M1 9C7 1 12 4 16 7c4-3 9-6 15 2-6 12-24 12-30 0Z"/><path fill="none" stroke="#7c1226" stroke-width="1.2" d="M4 9c8 3 16 3 24 0"/></svg>
+                <h2 class="titre-lettre">
+                    <span class="petit-titre">Joyeux anniversaire</span>
+                    My Love
+                </h2>
                 <p>Écris ici le premier paragraphe de ta lettre.</p>
                 <p>Et ici le deuxième.</p>
                 <p class="signature">Je t'aime.</p>
             </div>
+
+            <div class="photobooth">
+                <div class="cliche"></div>
+                <div class="cliche"></div>
+                <div class="cliche"></div>
+                <!-- <div class="cliche" style="background-image: url('photo1.jpg');"></div> -->
+            </div>
         </div>
-    
-        <div class="photobooth">
-            <div class="cliche"></div>
-            <div class="cliche"></div>
-            <div class="cliche"></div>
-            <!-- <div class="cliche" style="background-image: url('photo1.jpg');"></div> -->        
-        </div>
-    
+
     </div>
 
 

@@ -382,77 +382,119 @@ button:active {
 }
 
 .ecran-lettre {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;      
-    padding: 60px 40px 60px 40px; 
     position: relative;
-    gap: 50px;
     min-height: 100vh;
-    box-sizing: border-box;  
+    padding: 60px 40px 60px 40px;
+    box-sizing: border-box;
+    background: radial-gradient(120% 90% at 50% 40%, #99203a 0%, #7c1226 55%, #4d0916 130%);
 }
-.feuille {
-    filter: drop-shadow(0 20px 25px rgba(20, 2, 6, 0.5));
+.lettre {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) minmax(0, 230px);   /* le papier, puis les photos */
+    gap: 22px;
+    justify-content: center;
+    align-items: start;
 }
 .papier {
-    background: linear-gradient(175deg, #f7e9b8, #efdc9c);
+    position: relative;
+    background: linear-gradient(175deg, #f6e9c8, #efdfb9);
     color: #3b0f18;
-    padding: 50px 40px;
+    padding: 44px 40px 46px 40px;
     text-align: left;
-    width: 560px;
-    clip-path: polygon(
-        0% 10px, 6% 0, 13% 12px, 21% 3px, 29% 10px, 38% 0, 46% 12px,
-        55% 4px, 63% 11px, 72% 0, 80% 10px, 88% 3px, 95% 12px, 100% 5px,
-        100% calc(100% - 10px), 94% 100%, 86% calc(100% - 12px),
-        78% calc(100% - 3px), 69% calc(100% - 11px), 60% 100%,
-        52% calc(100% - 12px), 43% calc(100% - 4px), 35% calc(100% - 11px),
-        26% 100%, 18% calc(100% - 10px), 10% calc(100% - 3px),
-        4% calc(100% - 12px), 0% calc(100% - 5px)
-    );
+    /* les bords dentelés du haut et du bas */
+    -webkit-mask:
+        conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / 18px 51% repeat-x,
+        conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / 18px 51% repeat-x;
+    mask:
+        conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / 18px 51% repeat-x,
+        conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / 18px 51% repeat-x;
 }
 .titre-lettre {
     font-family: 'Parisienne', cursive;
     font-weight: 400;
-    font-size: 44px;
+    font-size: 50px;
+    line-height: 1.1;
     text-align: center;
-    color: #7c1226;
-    margin: 0 0 20px 0;
+    margin: 0 0 18px 0;
+}
+.petit-titre {
+    display: block;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
 }
 .papier p {
-    font-family: Georgia, serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
     font-style: italic;
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0 0 14px 0;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 0 0 0.9em 0;
 }
 .papier .signature {
     font-family: 'Parisienne', cursive;
     font-style: normal;
-    font-size: 30px;
+    font-size: 32px;
     text-align: right;
     color: #7c1226;
-    margin: 0;
+    margin: 10px 8px 0 0;
+}
+.baiser {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 26px;
+    transform: rotate(var(--r));
+    opacity: 0.75;
+    pointer-events: none;
 }
 .photobooth {
-    width: 150px;
+    display: grid;
+    gap: 12px;
     position: sticky;
     top: 40px;
-    background: #fbf5e6;
-    padding: 12px 12px 34px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transform: rotate(3deg);
-    box-shadow: 0 20px 30px rgba(20, 2, 6, 0.5);
 }
 .cliche {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
+    border: 6px solid #fbf5e6;
+    box-shadow: 0 12px 20px rgba(20, 2, 6, 0.45);
     background-color: #1a0f0c;
     background-image:
-        radial-gradient(30% 30% at 50% 60%, rgba(255, 196, 120, 0.85), transparent 70%),
+        radial-gradient(18% 14% at 50% 62%, rgba(255, 196, 120, 0.9), transparent 70%),
+        radial-gradient(40% 34% at 50% 66%, rgba(214, 120, 60, 0.55), transparent 72%),
         radial-gradient(90% 80% at 50% 70%, #4a1d16, #150a0a 75%);
     background-size: cover;
     background-position: center;
+}
+.cliche:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+.cliche:nth-child(3) {
+    transform: rotate(-1.5deg);
+}
+.coeurs-flottants {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.coeurs-flottants span {
+    position: absolute;
+    left: var(--x);
+    bottom: -40px;
+    font-size: var(--s);
+    color: #f7dcd8;
+    opacity: 0;
+    animation: monte var(--t) linear infinite;
+    animation-delay: var(--d);
+}
+@keyframes monte {
+    10% { opacity: 0.8; }
+    90% { opacity: 0.5; }
+    to  { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
 }
 
 

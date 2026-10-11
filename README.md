@@ -9,7 +9,7 @@ Un petit site surprise à offrir pour un anniversaire, fait en HTML, CSS et Java
 3. **Le chargement** : un gâteau pistache, une barre de progression et une pluie de cœurs.
 4. **Le gâteau** : la lumière s'éteint, décompte 3, 2, 1, les bougies se soufflent, feu d'artifice.
 5. **L'enveloppe** : on touche le sceau pour l'ouvrir.
-6. **La lettre** : un papier déchiré avec une bande de trois photos.
+6. **La lettre** : un papier aux bords dentelés, avec des traces de baisers, des cœurs qui montent et trois photos encadrées.
 
 ## Lancer le site
 
@@ -34,7 +34,7 @@ La version de démonstration s'ouvre avec le code **010101**.
 | --- | --- | --- |
 | Le code secret | `script.js` | `const bonCode = "010101";` tout en haut. Six chiffres. |
 | La date affichée | `index.html` | `<p class="date">01/01/01</p>` |
-| La lettre | `index.html` | La boîte `papier` : le titre est dans `titre-lettre`, chaque `<p>` est un paragraphe, la fin est dans `signature`. Ajouter autant de `<p>` que nécessaire, le papier s'allonge tout seul. |
+| La lettre | `index.html` | La boîte `papier` : le titre est dans `titre-lettre` (avec la petite ligne en majuscules dans `petit-titre`), chaque `<p>` est un paragraphe, la fin est dans `signature`. Ajouter autant de `<p>` que nécessaire, le papier s'allonge tout seul. |
 | Les photos | `design.css` et `index.html` | Voir la section « Ajouter ses photos » juste en dessous. |
 
 ### Ajouter ses photos
@@ -44,7 +44,7 @@ Le site a quatre emplacements de photo. Tant qu'ils sont vides, ils affichent un
 | Emplacement | Écran | Format conseillé |
 | --- | --- | --- |
 | Le Polaroïd | Code secret | Portrait (4 par 5) |
-| Les trois clichés de la bande | Lettre | Portrait (3 par 4) |
+| Les trois photos encadrées | Lettre | Paysage (4 par 3) |
 
 **Étape 1.** Copier les photos dans le dossier du site, à côté de `index.html`. Leur donner des noms simples, sans espace ni accent : `polaroid.jpg`, `photo1.jpg`, `photo2.jpg`, `photo3.jpg`.
 
@@ -60,7 +60,7 @@ Le site a quatre emplacements de photo. Tant qu'ils sont vides, ils affichent un
 }
 ```
 
-**Étape 3, la bande de trois photos.** Dans `index.html`, boîte `photobooth`, ajouter un `style` à chaque cliché :
+**Étape 3, les trois photos de la lettre.** Dans `index.html`, boîte `photobooth`, ajouter un `style` à chaque cliché :
 
 ```html
 <div class="photobooth">
@@ -74,7 +74,7 @@ Le site a quatre emplacements de photo. Tant qu'ils sont vides, ils affichent un
 
 - Les photos sont recadrées automatiquement pour remplir leur cadre, sans être déformées (`background-size: cover`). Si le recadrage coupe un visage, changer `background-position: center;` en `top` ou `bottom`.
 - Le nom écrit dans le code doit être exactement celui du fichier, majuscules et extension comprises (`.jpg`, `.jpeg` et `.png` sont trois noms différents).
-- Pour ajouter un quatrième cliché, copier une ligne `<div class="cliche" ...>` : la bande s'allonge toute seule.
+- Pour ajouter un quatrième cliché, copier une ligne `<div class="cliche" ...>` : la colonne s'allonge toute seule.
 - Des photos de téléphone pèsent plusieurs mégaoctets et ralentissent le chargement. Les réduire à environ 1000 pixels de large avant de les ajouter.
 
 ### Les textes
@@ -138,7 +138,7 @@ Dans `feux.js` :
 
 ### Les polices
 
-Elles viennent de Google Fonts, chargées dans le `<head>` de `index.html` : **Parisienne** pour les titres manuscrits et **Josefin Sans** pour les chiffres et les petits textes en majuscules. Pour en changer, modifier le lien et les `font-family` correspondants dans `design.css`.
+Elles viennent de Google Fonts, chargées dans le `<head>` de `index.html` : **Parisienne** pour les titres manuscrits, **Josefin Sans** pour les chiffres et les petits textes en majuscules, et **Cormorant Garamond** pour le texte de la lettre. Pour en changer, modifier le lien et les `font-family` correspondants dans `design.css`.
 
 ## Avant de partager
 
